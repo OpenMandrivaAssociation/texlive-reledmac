@@ -1,6 +1,6 @@
 Name:		texlive-reledmac
 Version:	63105
-Release:	1
+Release:	2
 Summary:	Typeset scholarly editions
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/reledmac
