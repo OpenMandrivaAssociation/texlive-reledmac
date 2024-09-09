@@ -1,5 +1,5 @@
 Name:		texlive-reledmac
-Version:	68411
+Version:	71890
 Release:	1
 Summary:	Typeset scholarly editions
 Group:		Publishing
