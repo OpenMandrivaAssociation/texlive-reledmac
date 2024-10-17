@@ -3,7 +3,7 @@ Version:	71890
 Release:	1
 Summary:	Typeset scholarly editions
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/reledmac
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/reledmac
 License:	lppl1.3
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/reledmac.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/reledmac.doc.r%{version}.tar.xz
