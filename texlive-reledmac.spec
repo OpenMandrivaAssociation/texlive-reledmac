@@ -1,43 +1,25 @@
-Name:		texlive-reledmac
-Version:	71890
-Release:	1
+%global tl_name reledmac
+%global tl_revision 79618
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	2.44.4
+Release:	%{tl_revision}.1
 Summary:	Typeset scholarly editions
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/reledmac
 License:	lppl1.3
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/reledmac.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/reledmac.doc.r%{version}.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/reledmac.source.r%{version}.tar.xz
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/reledmac.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/reledmac.doc.r%{tl_revision}.tar.xz
+Source2:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/reledmac.source.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+BuildSystem:	texlive
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-A package for typesetting scholarly critical editions,
-replacing the established ledmac and eledmac packages. Ledmac
-itself was a LaTeX port of the plain TeX EDMAC macros. The
-package supports indexing by page and by line numbers, and
-simple tabular- and array-style environments. The package is
-distributed with the related reledpar package.
+A package for typesetting scholarly critical editions, replacing the
+established ledmac and eledmac packages. Ledmac itself was a LaTeX port
+of the plain TeX EDMAC macros. The package supports indexing by page and
+by line numbers, and simple tabular- and array-style environments. The
+package is distributed with the related reledpar package.
 
-%prep
-%setup -c -a1 -a2
-%autopatch -p1
-
-%build
-
-%install
-rm -rf tlpkg
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -a * %{buildroot}%{_texmfdistdir}
-
-%files
-%doc %{_texmfdistdir}/source/latex/reledmac
-%{_texmfdistdir}/tex/latex/reledmac
-%doc %{_texmfdistdir}/doc/latex/reledmac
-
-%post -p %{_sbindir}/texlive.post
-
-%postun
-[ "$1" -eq 0 ] && %{_sbindir}/texlive.post
